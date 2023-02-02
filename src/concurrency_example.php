@@ -8,15 +8,17 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
  
+// Check POST key exists
 if (!isset($_POST['password'])) {
-	// Could not get the data that should have been sent.
+	// Exit on Empty POST request
 	exit('Please enter the access password.');
 }
 
+// Store Hashed Password
 $result = mysqli_query($con, "SELECT * FROM accounts WHERE id = 1");
 $hashed_password = $result->fetch_object()->password;
 
-// Password Stored and Hashed upon Account Creation - See Example Below
+// Password Hashing Algorithm
 // password_hash($password, PASSWORD_BCRYPT);  
 
 if (password_verify($_POST['password'], $hashed_password)) {
