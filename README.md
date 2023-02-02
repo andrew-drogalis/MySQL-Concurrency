@@ -4,7 +4,7 @@
 * [Feautures](#Feautures)
 * [Example Overview](#Example-Overview)
 * [License](#License)
-* [Contributing | Contact](#Contributing-|-Contact)
+* [Contact](#Contact)
 
 ## Features
 - Updates My SQL Database concurrently using WRITE LOCK or READ LOCK
@@ -121,7 +121,7 @@ That's it. You should now be ready to use MySQL-Concurrency Codebase!
 
 This software is distributed under the MIT license. Please read [LICENSE](https://github.com/andrew-drogalis/MySQL-Concurrency/blob/main/LICENSE) for information on the software availability and distribution.
 
-## Contributing | Contact
+## Contact
 
 Please open an issue of if you have any questions, suggestions, or feedback.
 
