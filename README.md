@@ -16,7 +16,7 @@
 
 Below is an example based on the code provided in the [src](https://github.com/andrew-drogalis/MySQL-Concurrency/blob/main/src/concurrency_example.php) folder, which covers updating a MySQL database concurrently, verifing user submitted passwords, and performing SQL data queries.
 
-Fill in the MySQL connect with your database credentials. It's recommended to locate the database credentials in a seperate file outside the public directory.
+Fill in the MySQL connect parameters with your database credentials. It's recommended to locate the database connect in a seperate file outside the public directory.
 ```php
 <?php
 
@@ -24,9 +24,9 @@ $con = mysqli_connect("hostname", "username", "password", "database");
 
 ?>
 ```
-In the src file require_once the 'databse_connect.php' file. Once the PHP file is required, the function will run and the connection will open. 
+In the src file require_once the 'database_connect.php' file. Once the PHP file is required, the function will run and the connection will open. 
 
-The require_once will also allow the '$con' variable to be available in the src file.
+The require_once will also make the '$con' variable accessible in the src file.
 
 ```php
 <?php
