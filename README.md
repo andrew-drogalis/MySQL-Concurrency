@@ -16,7 +16,7 @@
 
 Below is an example based on the code provided in the [src](https://github.com/andrew-drogalis/MySQL-Concurrency/blob/main/src/concurrency_example.php) folder, which covers updating a MySQL database concurrently, verifing user submitted passwords, and performing SQL data queries.
 
-Fill in the MySQL connect parameters with your database credentials. It's recommended to locate the database connect in a seperate file outside the public directory.
+Fill in the MySQL connect parameters with your database credentials. It's recommended to locate the database connection file outside the public directory.
 ```php
 <?php
 
@@ -24,14 +24,14 @@ $con = mysqli_connect("hostname", "username", "password", "database");
 
 ?>
 ```
-In the src file require_once the 'database_connect.php' file. Once the PHP file is required, the function will run and the connection will open. 
+In the public php file require once the connect to database file. Once the PHP file is required, the function will run and the connection will be made. 
 
-The require_once will also make the '$con' variable accessible in the src file.
+The require once will also allow the '$con' variable to be accessible in the public file.
 
 ```php
 <?php
 
-require_once '../database_connect.php';
+require_once '../connect_to_database.php';
 ```
 
 Confirm the database connection has been established.
@@ -42,7 +42,7 @@ if (mysqli_connect_errno()) {
 }
 ```
 
-Check if the POST password has been provided. If not exit the application.
+Check if the POST password has been provided. If not, exit the application.
 
 ```php
 if (!isset($_POST['password'])) {
@@ -51,16 +51,14 @@ if (!isset($_POST['password'])) {
 }
 ```
 
-Make a request from the accounts table to SELECT the previously hashed password.
+Make a request from the accounts table to SELECT the password from the database. All passwords should be hashed when stored.
 
 ```php
 $result = mysqli_query($con, "SELECT * FROM accounts WHERE id = 1");
 $hashed_password = $result->fetch_object()->password;
 ```
 
-The hashed password is verified against the POST request.
-
-If the password is correct, the user is authenticated and the SQL table can be updated.
+The hashed password is verified against the POST request. If the password is correct, the user is authenticated and the SQL table can be updated.
 
 If concurrency is required, the LOCK TABLES query should be implimented. The WRITE parameter prevents any other session from reading or writing from the locked table. The READ parameter prevents another session from writting to the locked table, but allows read access.
 
@@ -110,7 +108,7 @@ Once all the queries have been made, make sure to close the connection to the My
 
 ```php
 mysqli_close($con);
-
+// End of File
 ?>
 ```
 
@@ -127,7 +125,7 @@ Please open an issue of if you have any questions, suggestions, or feedback.
 
 Please submit bug reports, suggestions, and pull requests to the [GitHub issue tracker](https://github.com/andrew-drogalis/MySQL-Concurrency/issues).
 
-Contact Email: [**Andrew Drogalis**](mailto:andrew.drogalis@gmail.com) 
+Contact Email: [**Andrew Drogalis**](mailto:andrew.drogalis2@gmail.com) 
 
 
 

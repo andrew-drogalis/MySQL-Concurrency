@@ -1,7 +1,7 @@
 <?php
  
 // Create Connection Outside Public Directory
-require_once '../database_connect.php';
+require_once '../connect_to_database.php';
 
 // Check connection
 if (mysqli_connect_errno()) {
