@@ -1,7 +1,7 @@
 # MySQL-Concurrency
 
 ## Table of Contents
-* [Feautures](#Feautures)
+* [Features](#Features)
 * [Example Overview](#Example-Overview)
 * [License](#License)
 * [Contact | Contribution](#Contact-|-Contribution)
@@ -14,7 +14,7 @@
 
 ## Example Overview
 
-Below is an example based on the code provided in the [src](https://github.com/andrew-drogalis/MySQL-Concurrency/blob/main/src/concurrency_example.php) folder, which covers updating a MySQL database concurrently, verifing user submitted passwords, and performing SQL data queries.
+Below is an example based on the code provided in the [src](https://github.com/andrew-drogalis/MySQL-Concurrency/blob/main/src/public/concurrency_example.php) folder, which covers updating a MySQL database concurrently, verifing user submitted passwords, and performing SQL data queries.
 
 Fill in the MySQL connect parameters with your database credentials. It's recommended to locate the database connection file outside the public directory.
 ```php

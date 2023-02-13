@@ -1,6 +1,6 @@
 <?php
  
-// Create Connection Outside Public Directory
+// Initalize Database Conenction and import '$con' variable from outside public directory
 require_once '../connect_to_database.php';
 
 // Check connection
